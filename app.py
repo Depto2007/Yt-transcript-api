@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from youtube_transcript_api import YouTubeTranscriptApi
 
 app = Flask(__name__)
+CORS(app)  # ✅ Allow CORS for all routes
 
 @app.route('/')
 def home():
